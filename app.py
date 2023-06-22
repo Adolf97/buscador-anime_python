@@ -2,16 +2,15 @@ import requests
 import json
 import pandas as pd
 
-anime_name = "Hells Paradise"
+anime_name = "mashle"
 
 data = requests.get(f'https://api.jikan.moe/v4/anime?q={anime_name}')
 results = json.loads(data.text)
-# pd.DataFrame(results)
 df = pd.json_normalize(results)
 
 # df2 = df.data # Éste es un objeto de Pandas
 # df2 = df.data[0] # Ésta es una lista
-df2 = df.data[0][0]
+df2 = df.data[0][0] # Éste es un diccionario
 
 anime_title = df2['title']
 anime_airing = df2['airing']
