@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>Buscador Anime</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h2>Buscar Anime</h2>
+            <form action="/" method="POST">
+                <div class="container-form">
+                    <input type="search" name="search">
+                    <button class="btn-form" type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-main">
+        <div>
+            {% for anime in animes %}
+                <img src="{{anime['images']['jpg']['image_url']}}"></img>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
