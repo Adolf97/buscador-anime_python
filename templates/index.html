@@ -21,25 +21,36 @@
 
     <div class="main">
         <div class="container-animes">
+
             {% for anime in animes %}
                 <div class="card-anime">
                     <p class="title-card">{{anime['title']}}</p>
                     <div class="img-card">
-                        <img class="image" src="{{anime['images']['jpg']['image_url']}}"></img>
+                        <img class="image" src="{{anime['images']['jpg']['image_url']}}" alt="{{anime['title']}}"></img>
                     </div>
                     <div class="info-card">
-
                         {% if anime['status'] == 'Currently Airing' %}
-                            <p class="info-subtitle on-air"><b class="info-subtitle-bold">Status:</b> {{anime['status']}}</p>
+                            <p class="info-subtitle on-air">
+                                <b class="info-subtitle-bold">Status:</b> {{anime['status']}}
+                            </p>
                         {% else %}
-                            <p class="info-subtitle finished"><b class="info-subtitle-bold">Status:</b> {{anime['status']}}</p>
+                            <p class="info-subtitle finished">
+                                <b class="info-subtitle-bold">Status:</b> {{anime['status']}}
+                            </p>
                         {% endif %}
-
-                        <p class="info-subtitle info-episodes"><b class="info-subtitle-bold">Episodes:</b> {{anime['episodes']}}</p>
+                        <p class="info-subtitle info-episodes">
+                            <b class="info-subtitle-bold">Episodes:</b> {{anime['episodes']}}
+                        </p>
                     </div>
-                    <button class="btn-addAnime">Already View</button>
+                        
+                    {% if anime['status'] == 'Not yet aired' %}
+                        <button class="btn-deactivated">Watched it {{anime['mal_id']}}</button>
+                    {% else %}
+                        <button class="btn-addAnime">Watched it {{anime['mal_id']}}</button>
+                    {% endif %}
                 </div>
             {% endfor %}
+
         </div>
     </div>
 </body>

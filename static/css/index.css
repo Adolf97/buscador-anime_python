@@ -8,6 +8,10 @@ body {
     background-color: #ffffff;
     overflow-x: hidden;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .navbar {
     width: 100vw;
     height: auto;
@@ -119,6 +123,18 @@ body {
 .finished {
     color: #ff2121;
     font-weight: 600;
+}
+.btn-deactivated {
+    margin-top: 3px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #a5a5a5;
+    border: none;
+    border-radius: 3px;
 }
 .btn-addAnime {
     margin-top: 3px;
