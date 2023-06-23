@@ -19,10 +19,25 @@
         </div>
     </nav>
 
-    <div class="container-main">
-        <div>
+    <div class="main">
+        <div class="container-animes">
             {% for anime in animes %}
-                <img src="{{anime['images']['jpg']['image_url']}}"></img>
+                <div class="card-anime">
+                    <p class="title-card">{{anime['title']}}</p>
+                    <div class="img-card">
+                        <img class="image" src="{{anime['images']['jpg']['image_url']}}"></img>
+                    </div>
+                    <div class="info-card">
+
+                        {% if anime['status'] == 'Currently Airing' %}
+                            <p class="info-subtitle on-air"><b class="info-subtitle-bold">Status:</b> {{anime['status']}}</p>
+                        {% else %}
+                            <p class="info-subtitle finished"><b class="info-subtitle-bold">Status:</b> {{anime['status']}}</p>
+                        {% endif %}
+
+                        <p class="info-subtitle info-episodes"><b class="info-subtitle-bold">Episodes:</b> {{anime['episodes']}}</p>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>

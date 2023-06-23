@@ -6,12 +6,15 @@
 }
 body {
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 .navbar {
     width: 100vw;
     height: auto;
     padding: 15px 20px;
     background-color: #FFA032;
+    position: fixed;
+    z-index: 1000;
 }
 .container {
     width: 100%;
@@ -40,4 +43,77 @@ body {
 }
 .btn-form:hover {
     cursor: pointer;
+}
+/*****************ANIME CARDS CONTAINER************************/
+.main {
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+.container-animes {
+    position: relative;
+    width: 95%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: first baseline;
+    align-items: start;
+    gap: 15px;
+}
+/*****************ANIME CARDS************************/
+.card-anime {
+    position: relative;
+    max-width: 230px;
+    min-height: 375px;
+    max-height: 375px;
+    box-shadow: 0 3px 10px #dadada;
+    border-radius: 5px;
+    padding: 5px 7px;
+    overflow: hidden;
+}
+.title-card {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 600;
+    color: #313131;
+    margin-bottom: 5px;
+}
+.img-card {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.info-card {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    color: #313131;
+}
+.info-subtitle {
+    margin-bottom: 3px;
+}
+.info-subtitle-bold {
+    color: #030220;
+}
+.on-air {
+    color: #03cb00;
+    font-weight: 600;
+}
+.finished {
+    color: #ff2121;
+    font-weight: 600;
 }
